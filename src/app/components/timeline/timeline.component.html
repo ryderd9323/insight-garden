@@ -1,0 +1,12 @@
+<section *if="events.length > 0; else loading">
+  <h3>Your Session Timeline</h3>
+  <ul>
+    <li *ngFor="let e of events">
+      {{ e.timestamp }} - {{ e.type }} on {{ e.page }}
+    </li>
+  </ul>
+</section>
+
+<ng-template #loading>
+  <p>Gathering your events...</p>
+</ng-template>
