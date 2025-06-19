@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IfDirective, ForOfDirective } from '@angular/common';
 import { EventService, AnalyticsEvent } from '../../services/event.service';
 
 
 @Component({
     selector: 'app-timeline',
     standalone: true,
-    imports: [IfDirective, ForOfDirective],
+    imports: [],
     templateUrl: './timeline.component.html',
     styleUrl: './timeline.component.scss'
 })
