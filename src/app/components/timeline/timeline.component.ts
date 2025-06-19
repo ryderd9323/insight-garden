@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IfDirective, ForOfDirective } from '@angular/common';
 import { EventService, AnalyticsEvent } from '../../services/event.service';
 import { CommonModule } from '@angular/common';
 
