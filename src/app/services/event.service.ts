@@ -26,4 +26,8 @@ export class EventService {
   getSession(sessionId: string): Observable<AnalyticsEvent[]> {
     return this.http.get<AnalyticsEvent[]>(`http://localhost:3000/session/${sessionId}`);
   }
+
+  getHeatmap(page: string): Observable<AnalyticsEvent[]> {
+    return this.http.get<AnalyticsEvent[]>(`http://localhost:3000/heatmap/${page}`);
+  }
 }
