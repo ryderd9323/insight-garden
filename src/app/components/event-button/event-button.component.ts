@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { EventService, AnalyticsEvent } from '../../services/event.service';
 
 @Component({
     selector: 'app-event-button',
-    imports: [CommonModule],
+    standalone: true,
+    imports: [],
     templateUrl: './event-button.component.html',
     styleUrl: './event-button.component.scss'
 })
