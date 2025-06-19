@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { EventService, AnalyticsEvent } from '../../services/event.service';
 
 @Component({
-  selector: 'app-event-button',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './event-button.component.html',
-  styleUrl: './event-button.component.scss'
+    selector: 'app-event-button',
+    imports: [CommonModule],
+    templateUrl: './event-button.component.html',
+    styleUrl: './event-button.component.scss'
 })
 export class EventButtonComponent {
   constructor(private eventService: EventService) {}
