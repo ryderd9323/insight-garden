@@ -1,0 +1,20 @@
+.banner {
+  width: 60%;
+  padding: 1rem;
+  background: linear-gradient(to right, #4a90e2, #50e3c2);
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background 0.3s ease-in-out;
+}
+
+.banner:hover {
+  background: linear-gradient(to left, #4a90e2, #50e3c2);
+}
+
+.banner-text {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+}
