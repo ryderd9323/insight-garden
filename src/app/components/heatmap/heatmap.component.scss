@@ -1,0 +1,17 @@
+.map-container { position: relative; }
+.map-container.placeholder {
+  width: 800px;
+  height: 600px;
+  background: linear-gradient(to bottom, #e0e0e0, #f9f9f9);
+  border: 2px dashed #ccc;
+  position: relative;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.heat-dot {
+  position: absolute; width: 12px; height: 12px;
+  border-radius: 50%; background: rgba(255, 0, 0, 0.5);
+  animation: fade 2s ease-out forwards;
+}
+@keyframes fade { from { opacity: 1; } to { opacity: 0; } }

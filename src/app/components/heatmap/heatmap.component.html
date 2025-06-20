@@ -1,0 +1,10 @@
+<div class="map-container placeholder">
+  <!-- <img src="assets/demo-page.png" alt="Demo Page"/> -->
+  @for (e of events; track e) {
+    <span
+      class="heat-dot"
+      [style.left.px]="e.x"
+      [style.top.px]="e.y"
+      ></span>
+  }
+</div>

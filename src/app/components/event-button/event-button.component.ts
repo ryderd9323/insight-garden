@@ -12,7 +12,7 @@ import { EventService, AnalyticsEvent } from '../../services/event.service';
 export class EventButtonComponent {
   constructor(private eventService: EventService) {}
 
-  sendTestClick() {
+  sendEvent() {
     const event: AnalyticsEvent = {
       session_id: this.getSessionId(),
       type: 'click',
@@ -25,6 +25,21 @@ export class EventButtonComponent {
     this.eventService.sendEvent(event).subscribe({
       next: () => console.log('Event sent successfully'),
       error: (err) => console.error('Error sending event:', err)
+    });
+  }
+
+  sendSecondEvent(): void {
+    const event: AnalyticsEvent = {
+      session_id: this.getSessionId(),
+      type: 'click',
+      page: 'demo-page',
+      x: 200, // Example coordinates
+      y: 300, // Example coordinates
+      timestamp: new Date().toISOString(),
+    };
+    this.eventService.sendEvent(event).subscribe({
+      next: () => console.log('Second event sent successfully'),
+      error: (err) => console.error('Error sending second event:', err)
     });
   }
 
