@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { EventButtonComponent } from "./components/event-button/event-button.component";
-import { TimelineComponent } from "./components/timeline/timeline.component";
-import { HeatmapComponent } from "./components/heatmap/heatmap.component";
-import { ClickableBannerComponent } from "./components/clickable-banner/clickable-banner.component";
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, EventButtonComponent, TimelineComponent, HeatmapComponent, ClickableBannerComponent],
+    imports: [RouterOutlet, RouterLink, RouterLinkActive],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

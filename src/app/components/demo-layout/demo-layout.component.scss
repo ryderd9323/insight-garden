@@ -1,0 +1,16 @@
+.button-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+app-clickable-banner {
+  margin: 1rem 0;
+}
+
+app-timeline {
+  margin-top: 2rem;
+  display: block;
+  width: 100%;
+}
