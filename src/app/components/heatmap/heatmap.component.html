@@ -1,4 +1,9 @@
-<div class="map-container placeholder">
+<div class="heatmap-container">
+  @if (bgImage) {
+    <img [src]="bgImage" alt="Demo page screenshot" />
+  } @else {
+    <div class="heatmap-placeholder"></div>
+  }
   <!-- <img src="assets/demo-page.png" alt="Demo Page"/> -->
   @for (e of events; track e) {
     <span

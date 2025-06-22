@@ -15,7 +15,7 @@ export class EventButtonComponent {
   sendEvent() {
     const event: AnalyticsEvent = {
       session_id: this.getSessionId(),
-      type: 'click',
+      type: 'clickA',
       page: 'demo-page',
       x: 100, // Example coordinates
       y: 200, // Example coordinates
@@ -31,7 +31,7 @@ export class EventButtonComponent {
   sendSecondEvent(): void {
     const event: AnalyticsEvent = {
       session_id: this.getSessionId(),
-      type: 'click',
+      type: 'clickB',
       page: 'demo-page',
       x: 200, // Example coordinates
       y: 300, // Example coordinates
