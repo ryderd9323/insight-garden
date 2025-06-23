@@ -1,14 +1,18 @@
-@if (events.length > 0) {
-  <section>
-    <h3>Your Session Timeline</h3>
-    <ul>
-      @for (e of events; track e) {
-        <li>
-          {{ e.timestamp }} - {{ e.type }} on {{ e.page }}
-        </li>
-      }
-    </ul>
-  </section>
-} @else {
-  <p>Gathering your events...</p>
-}
+<div class="timeline-container">
+  @if (events.length > 0) {
+    <section>
+      <h3>Your Session Timeline</h3>
+      <ul class="event-list">
+        @for (e of events; track e) {
+          <li>
+            <span class="event-timestamp">{{ e.timestamp }}</span>
+            <span class="event-type">{{ e.type }}</span>
+            <span class="event-label">on {{ e.page }}</span>
+          </li>
+        }
+      </ul>
+    </section>
+  } @else {
+    <p>Gathering your events...</p>
+  }
+</div>

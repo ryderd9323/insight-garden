@@ -1,0 +1,40 @@
+/* Nav bar styling */
+nav {
+  display: flex;
+  justify-content: left;
+  gap: 1.5rem;
+  background: linear-gradient(270deg, #5000CC, #fff);
+  padding: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+nav a {
+  font-family: 'Futura', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background: #e8e8e8;
+  color: #444;
+}
+
+nav a.active {
+  background: #ff4500;
+  color: #fff;
+}
+
+nav a.active::after {
+  content: '';
+  display: block;
+  margin: 0.2rem auto 0;
+  width: 50%;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}

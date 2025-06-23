@@ -1,16 +1,25 @@
-.button-row {
-  display: flex;
-  gap: 1rem;
+.demo-container {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  row-gap: 2rem;
+}
+
+.demo-container app-clickable-banner {
+  grid-row: 1;
   justify-content: center;
-  margin: 1rem 0;
 }
 
-app-clickable-banner {
-  margin: 1rem 0;
+.demo-container .button-row {
+  grid-row: 2;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
-app-timeline {
-  margin-top: 2rem;
-  display: block;
+.demo-container app-timeline {
+  grid-row: 3;
   width: 100%;
 }

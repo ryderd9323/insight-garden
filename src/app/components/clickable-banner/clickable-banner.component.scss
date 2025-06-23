@@ -1,9 +1,10 @@
 .banner {
-  width: 60%;
+  width: 90%;
   padding: 1rem;
   background: linear-gradient(to right, #4a90e2, #50e3c2);
   cursor: pointer;
   text-align: center;
+  justify-self: center;
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: background 0.3s ease-in-out;

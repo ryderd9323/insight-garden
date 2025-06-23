@@ -1,0 +1,57 @@
+.timeline-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-container h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* List of events */
+ul.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.event-list li {
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+ul.event-list li:last-child {
+  border-bottom: none;
+}
+
+/* Timestamp styling */
+.event-timestamp {
+  font-family: monospace;
+  color: #999;
+  margin-right: 1rem;
+  align-self: center;
+}
+
+/* Event type badge */
+.event-type {
+  background-color: #ff4500;
+  color: #fff;
+  padding: 0.5rem;
+  align-content: center;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
