@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { EventService, AnalyticsEvent } from '../../services/event.service';
 
 @Component({
@@ -12,43 +11,51 @@ import { EventService, AnalyticsEvent } from '../../services/event.service';
 export class EventButtonComponent {
   constructor(private eventService: EventService) {}
 
-  sendEvent() {
-    const event: AnalyticsEvent = {
-      session_id: this.getSessionId(),
+  sendEvent(event: MouseEvent): void {
+    // Get button's bounding rectangle
+    const rect = document.getElementById('heatmap-area')!.getBoundingClientRect();
+
+    // Calculate relative click position
+    const x = event.clientX - rect.left + window.scrollX;
+    const y = event.clientY - rect.top + window.scrollY;
+
+    // Build and send event
+    const evt: AnalyticsEvent = {
+      session_id: localStorage.getItem('session_id') || '',
       type: 'clickA',
       page: 'demo-page',
-      x: 100, // Example coordinates
-      y: 200, // Example coordinates
+      x,
+      y,
       timestamp: new Date().toISOString(),
     };
 
-    this.eventService.sendEvent(event).subscribe({
-      next: () => console.log('Event sent successfully'),
-      error: (err) => console.error('Error sending event:', err)
+    this.eventService.sendEvent(evt).subscribe({
+      next: () => console.log('Event A sent at', x, y),
+      error: (err) => console.error('Error sending event A:', err)
     });
   }
 
-  sendSecondEvent(): void {
-    const event: AnalyticsEvent = {
-      session_id: this.getSessionId(),
+  sendSecondEvent(event: MouseEvent): void {
+    // Get button's bounding rectangle
+    const rect = document.getElementById('heatmap-area')!.getBoundingClientRect();
+
+    // Calculate relative click position
+    const x = event.clientX - rect.left + window.scrollX;
+    const y = event.clientY - rect.top + window.scrollY;
+
+    // Build and send event
+    const evt: AnalyticsEvent = {
+      session_id: localStorage.getItem('session_id') || '',
       type: 'clickB',
       page: 'demo-page',
-      x: 200, // Example coordinates
-      y: 300, // Example coordinates
+      x,
+      y,
       timestamp: new Date().toISOString(),
     };
-    this.eventService.sendEvent(event).subscribe({
-      next: () => console.log('Second event sent successfully'),
-      error: (err) => console.error('Error sending second event:', err)
-    });
-  }
 
-  private getSessionId(): string {
-    let id = localStorage.getItem('session_id');
-    if (!id) {
-      id = crypto.randomUUID();
-      localStorage.setItem('session_id', id);
-    }
-    return id;
+    this.eventService.sendEvent(evt).subscribe({
+      next: () => console.log('Event B sent at', x, y),
+      error: (err) => console.error('Error sending event B:', err)
+    });
   }
 }

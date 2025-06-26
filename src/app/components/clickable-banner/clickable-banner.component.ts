@@ -15,9 +15,10 @@ export class ClickableBannerComponent {
 
   // Handles clicks on banner and sends custom event
   handleClick(event: MouseEvent): void {
-    const rect = (event.target as HTMLElement).getBoundingClientRect();
-    const x = event.clientX - rect.left; // X coordinate relative to the element
-    const y = event.clientY - rect.top; // Y coordinate relative to the element
+    const rect = document.getElementById('heatmap-area')!.getBoundingClientRect();
+
+    const x = event.clientX - rect.left + window.scrollX;
+    const y = event.clientY - rect.top + window.scrollY;
 
     const customEvent = {
       session_id: this.sessionID,
@@ -29,7 +30,9 @@ export class ClickableBannerComponent {
     };
 
     this.eventService.sendEvent(customEvent).subscribe({
-      next: () => console.log('Banner click event sent successfully'),
+      next: () => {
+        console.log('Banner click event sent at', x, y);
+      },
       error: (err) => console.error('Error sending banner click event:', err)
     });
   }
