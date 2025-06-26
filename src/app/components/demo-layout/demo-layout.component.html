@@ -3,5 +3,13 @@
   <div class="button-row">
     <app-event-button></app-event-button>
   </div>
+  <div class="export-row">
+    <button (click)="exportTimeline()">
+      Export Timeline
+    </button>
+    <button (click)="resetSession()">
+      Reset Session
+    </button>
+  </div>
   <app-timeline></app-timeline>
 </div>

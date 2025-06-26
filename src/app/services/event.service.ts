@@ -28,6 +28,14 @@ export class EventService {
   }
 
   getHeatmap(page: string): Observable<AnalyticsEvent[]> {
-    return this.http.get<AnalyticsEvent[]>(`http://localhost:3000/heatmap/${page}`);
+    // Get current session ID
+    const sessionId = localStorage.getItem('session_id');
+
+    // Build URL: add ?session=...
+    const url = sessionId
+      ? `http://localhost:3000/heatmap/${page}?session=${sessionId}`
+      : `http://localhost:3000/heatmap/{page}`;
+
+    return this.http.get<AnalyticsEvent[]>(url);
   }
 }
