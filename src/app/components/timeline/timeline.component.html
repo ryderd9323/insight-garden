@@ -1,5 +1,5 @@
 <div class="timeline-container">
-  @if (events.length > 0) {
+  @if ((events?.length ?? 0) > 0) {
     <section>
       <h3>Your Session Timeline</h3>
       <ul class="event-list">
@@ -8,11 +8,12 @@
             <span class="event-timestamp">{{ e.timestamp }}</span>
             <span class="event-type">{{ e.type }}</span>
             <span class="event-label">on {{ e.page }}</span>
+            <span class="event-coords">({{ e.x }}, {{ e.y }})</span>
           </li>
         }
       </ul>
     </section>
   } @else {
-    <p>Gathering your events...</p>
+    <p>No Events</p>
   }
 </div>

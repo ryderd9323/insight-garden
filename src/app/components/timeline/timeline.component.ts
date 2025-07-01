@@ -18,8 +18,9 @@ export class TimelineComponent implements OnInit {
   ngOnInit(): void {
     this.sessionId = localStorage.getItem('session_id') || '';
     if (this.sessionId) {
-      this.eventService.getSession(this.sessionId).subscribe(evts => {
-        this.events = evts;
+      this.eventService.getSession(this.sessionId).subscribe({
+        next: evts => this.events = evts || [],
+        error: _ => this.events = []
       });
     }
   }
