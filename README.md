@@ -1,1 +1,3 @@
 Interactive analytics prototype built with Angular 20 and a Go backend. Captures real-time user interactions — clicks, banners, and custom regions — and stores them in Postgres, as well as visualizing engagement through a pulsing heatmap and session timelines.
+
+[Backend Repo](https://github.com/ryderd9323/insight-backend)
